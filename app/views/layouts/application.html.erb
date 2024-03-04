@@ -4,10 +4,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tacostagram</title>
-</head>
+  <title>Tacogram</title>
+  <link rel="stylesheet" href="/stylesheets/application.css">
+  </head>
 
 <body>
+<div class="gutter-left">
   <p>
     <% @user = User.find_by({ "id" => session["user_id"] }) %>
     <% if @user == nil %>
@@ -22,9 +24,9 @@
   </p>
 
   <div>
-    <h1>Tacostagram</h1>
+    <h1 id="title" class="subtitle">Tacostagram</h1>
     <div>
-      <a href="/posts/new/">New Post</a>
+      <a href="/posts/new/" class="subtitle">New Post</a>
     </div>
   </div>
 
@@ -33,5 +35,6 @@
   </div>
 
   <%= yield %>
+</div>
 </body>
 </html>
